@@ -21,13 +21,14 @@ puts Trip.all.include?(trip3)
 puts Trip.all.include?(trip4)
 
 puts 'Tourist can find by name'
-puts Tourist.find_by_name(bill1.name) == (bill1)
-puts Tourist.find_by_name("Tom") == (tom)
-puts Tourist.find_by_name(anny.name) == (anny)
+puts Tourist.find_by_name(bill1.name) == bill1
+puts Tourist.find_by_name("Tom") == tom
+puts Tourist.find_by_name(anny.name) == anny
 
 puts 'Tourist knows its trips'
 puts tom.trips.include?(trip2)
 puts tom.trips.include?(trip4)
+puts !tom.trips.include?(trip3)
 
 puts 'Tourist knows its landmarks'
 puts tom.landmarks.include?(statue_of_liberty)
@@ -40,8 +41,16 @@ puts anny.visit_landmark(eiffel_tower).tourist == anny
 puts 'Tourist knows the landmarks that he/she has never traveled'
 puts !bill1.never_visited.include?(eiffel_tower)
 
+puts 'Landmark knows its trips'
+puts hollywood.trips.include?(trip3)
+puts !hollywood.trips.include?(trip1)
 
+puts 'Landmark can find by city'
+puts Landmark.find_by_city(eiffel_tower.city).include?(eiffel_tower)
+puts Landmark.find_by_city("Paris").include?(eiffel_tower)
 
-
+puts 'Landmark knows its tourists'
+puts hollywood.tourists.include?(tom)
+puts hollywood.tourists.include?(anny)
 
 # binding.pry

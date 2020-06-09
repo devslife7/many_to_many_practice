@@ -13,17 +13,19 @@ class Tourist
     end
 
     def self.find_by_name(name)
-        self.all.each do |tourist|
-            if tourist.name == name
-                return tourist
-            end
-        end
+        # self.all.each do |tourist|
+        #     if tourist.name == name
+        #         return tourist
+        #     end
+        # end
+        self.all.find {|tourist| tourist.name == name}
     end
 
     def trips
         Trip.all.select do |trip|
             trip.tourist == self
         end
+        # Trip.all
     end
 
     def landmarks
