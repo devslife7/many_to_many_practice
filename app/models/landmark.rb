@@ -1,7 +1,6 @@
 
 class Landmark
     attr_reader :name, :city
-
     @@all =[]
 
     def initialize(name, city)
@@ -27,7 +26,7 @@ class Landmark
   end
 
   def tourists
-    trips.collect do |trip|
+    trips.map do |trip|
       trip.tourist
     end
   end

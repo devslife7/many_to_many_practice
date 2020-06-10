@@ -1,6 +1,5 @@
 class Tourist
     attr_accessor :name
-
     @@all =[]
 
     def initialize(name)
@@ -25,7 +24,6 @@ class Tourist
         Trip.all.select do |trip|
             trip.tourist == self
         end
-        # Trip.all
     end
 
     def landmarks
@@ -43,7 +41,4 @@ class Tourist
             trip.tourist != self
         end
     end
-    
-    
-
 end
