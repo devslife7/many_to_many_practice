@@ -37,8 +37,6 @@ class Tourist
     end
 
     def never_visited
-        Trip.all.select do |trip|
-            trip.tourist != self
-        end
+        Landmark.all.reject {|landmark| self.landmarks.include?(landmark)}
     end
 end

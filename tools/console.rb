@@ -43,6 +43,7 @@ puts anny.visit_landmark(eiffel_tower).tourist == anny
 
 puts '7/ Tourist knows the landmarks that he/she has never traveled'
 puts !bill1.never_visited.include?(eiffel_tower)
+puts bill2.never_visited.include?(eiffel_tower)
 
 puts '8/ Landmark knows its trips'
 puts hollywood.trips.include?(trip3)
